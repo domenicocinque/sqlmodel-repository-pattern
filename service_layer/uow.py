@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Callable
 
 from orm.repositories import (
-    HeroReposityBase,
+    HeroRepositoryBase,
     TeamRepositoryBase,
     HeroRepository,
     TeamRepository
@@ -15,7 +15,7 @@ class UnitOfWorkBase(ABC):
     """Unit of work.
     """
 
-    heroes: HeroReposityBase
+    heroes: HeroRepositoryBase
     teams: TeamRepositoryBase
 
     def __enter__(self):

@@ -149,7 +149,7 @@ class GenericSqlRepository(GenericRepository[T], ABC):
             self._session.flush()
 
 
-class HeroReposityBase(GenericRepository[Hero], ABC):
+class HeroRepositoryBase(GenericRepository[Hero], ABC):
     """Hero repository.
     """
     @abstractmethod
@@ -157,7 +157,7 @@ class HeroReposityBase(GenericRepository[Hero], ABC):
         raise NotImplementedError()
 
 
-class HeroRepository(GenericSqlRepository[Hero], HeroReposityBase):
+class HeroRepository(GenericSqlRepository[Hero], HeroRepositoryBase):
     def __init__(self, session: Session) -> None:
         super().__init__(session, Hero)
 
